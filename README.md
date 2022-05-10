@@ -4,7 +4,7 @@ A python class providing interface for ML dataset annotation.
 
 ## Installation
 
-`pip install git+https://github.com/patrikflorek/kvetcher`
+`pip install git+https://github.com/patrikflorek/annotaition`
 
 ## How to use
 
