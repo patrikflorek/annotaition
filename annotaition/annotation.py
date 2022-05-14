@@ -31,11 +31,11 @@ class Annotation():
         self.label_definitions = LabelDefinitionsList()
 
         self.examples = ExamplesDict(
-            feature_defintions=self.feature_definitions,
+            feature_definitions=self.feature_definitions,
             label_definitions=self.label_definitions
         )
 
-    def set_data(self, data):
+    def update(self, data):
         self.title = data.get('title', '')
         self.description = data.get('description', '')
         self.remote_server = data.get('remote_server', None)
@@ -43,16 +43,25 @@ class Annotation():
         self.index_data_field_name = data['index_data_field_name']
 
         feature_definitions_data = data.get('feature_definitions', [])
-        self.feature_definitions.update(feature_definitions_data)
+        self.feature_definitions.update(
+            feature_definitions_data, self.index_feature_name, self.index_data_field_name)
+        self.examples.update_feature_definitions(self.feature_definitions)
 
         label_definitions_data = data.get('label_definitions', [])
         self.label_definitions.update(label_definitions_data)
+        self.examples.update_label_defintions(self.label_definitions)
 
         labels_dict = data.get('labels', {})
-        self.examples.update(labels_dict)
+        self.examples.update_labels_dict(labels_dict)
 
     def load_json(self, filepath):
         f = open(filepath)
         data = json.load(f)
-        self.set_data(data)
+        self.update(data)
         self.filepath = filepath
+
+
+if __name__ == "__main__":
+    annotation = Annotation()
+    annotation.load_json("annotaition/data/organic_annotation.json")
+    print(annotation.__dict__)
