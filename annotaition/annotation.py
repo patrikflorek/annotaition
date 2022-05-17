@@ -5,7 +5,7 @@ import json
 
 from feature_definition import FeatureDefinitionsList
 from label_definition import LabelDefinitionsList
-from example import ExamplesDict
+from example import ExamplesList
 
 
 class Annotation():
@@ -30,9 +30,12 @@ class Annotation():
 
         self.label_definitions = LabelDefinitionsList()
 
-        self.examples = ExamplesDict(
+        self.examples = ExamplesList(
+            index_feature_name=self.index_feature_name,
+            index_data_field_name=self.index_data_field_name,
             feature_definitions=self.feature_definitions,
-            label_definitions=self.label_definitions
+            label_definitions=self.label_definitions,
+            labels=[]
         )
 
     def update(self, data):
@@ -51,8 +54,8 @@ class Annotation():
         self.label_definitions.update(label_definitions_data)
         self.examples.update_label_defintions(self.label_definitions)
 
-        labels_dict = data.get('labels', {})
-        self.examples.update_labels_dict(labels_dict)
+        self.examples_data = data.get('examples', [])
+        self.examples.update_labels(self.examples_data)
 
     def load_json(self, filepath):
         f = open(filepath)

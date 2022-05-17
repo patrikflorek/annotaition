@@ -83,78 +83,102 @@
             ]
         }
     ],
-    "labels": {
-        "data/pexels-photo-1110670.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1110670.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1179581.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1179581.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1231023.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1231023.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1268129.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1268129.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1326999.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1326999.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1343504.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1343504.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1404819.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1404819.npz",
-                    "Organic"
-                ]
-            }
-        ],
-        "data/pexels-photo-1480523.jpeg": [
-            {
-                "name": "Organic object class",
-                "data_fields": [
-                    "pexels-photo-1480523.npz",
-                    "Organic"
-                ]
-            }
-        ]
-    }
+    "examples": [
+        {
+            "index": "data/pexels-photo-1110670.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1110670.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1179581.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1179581.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1231023.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1231023.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1268129.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1268129.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1326999.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1326999.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1343504.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1343504.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1404819.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1404819.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        },
+        {
+            "index": "data/pexels-photo-1480523.jpeg",
+            "labels": [
+                {
+                    "name": "Organic object class",
+                    "data_fields": [
+                        "pexels-photo-1480523.npz",
+                        "Organic"
+                    ]
+                }
+            ]
+        }
+    ]
 }
