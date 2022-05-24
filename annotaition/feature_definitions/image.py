@@ -1,7 +1,9 @@
 # feature_definitions/image.py
 
-from feature_definitions.base import BaseFeatureDefinition
+from .base import BaseFeatureDefinition
 
 
 class ImageFeatureDefinition(BaseFeatureDefinition):
-    pass
+    def get_data_field_values(self):
+        print(
+            f"Class {self.__class__.__name__} implements get_data_field_values method")

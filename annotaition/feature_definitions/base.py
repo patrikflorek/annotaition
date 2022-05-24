@@ -37,26 +37,6 @@ class BaseFeatureDefinition:
     def __repr__(self):
         return str(self.__dict__)
 
-#     def get_data_field_values(self):
-#         raise NotImplementedError
-
-#     def get_indices(self):
-#         data_field_values = self.get_data_field_values()
-#         indices = data_field_values[self.index_data_field_name]
-
-#         return indices
-
-#     def _get_indices(self):
-#         for data_field in self.data_fields:
-#             if data_field.name == self.index_data_field_name:
-#                 index_data_field = data_field
-#                 break
-
-#         indices = []
-#         if (index_data_field.type == "file_paths" and
-#                 index_data_field.source == "file_paths"):
-#             for file_paths_pattern in index_data_field.source_file_paths:
-#                 file_paths = glob(file_paths_pattern)
-#                 indices.extend(file_paths)
-
-#         return indices
+    def get_data_field_values(self):
+        raise NotImplementedError(
+            f"method is not implemented in class {self.__class__.__name__}")
