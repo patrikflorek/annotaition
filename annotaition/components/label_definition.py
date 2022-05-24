@@ -1,11 +1,13 @@
-# label_definition.py
-
+# components/label_definition.py
 
 class LabelCategory():
     def __init__(self, category_dict):
         self.name = category_dict["name"]
         self.avatar = category_dict.get('avatar', None)
         self.color = category_dict.get("color", None)
+
+    def __repr__(self):
+        return str(self.__dict__)
 
 
 class LabelCategoriesList(list):
@@ -16,27 +18,24 @@ class LabelCategoriesList(list):
             self.append(category)
 
 
-class LabelDefinitionDataField():
+class LabelDataFieldDefinition():
     def __init__(self, data_field_dict):
         self.name = data_field_dict['name']
         self.type = data_field_dict.get('type', None)
         self.icon = data_field_dict.get('icon', '')
 
         if self.type == 'selection':
-            options = data_field_dict['options']
+            self.options = data_field_dict['options']
 
-            # Options can be either a list or a string
-            if isinstance(options, list):
-                self.options = options.copy()
-            else:
-                self.options = options
+    def __repr__(self):
+        return str(self.__dict__)
 
 
-class LabelDefinitionDataFieldsList(list):
+class LabelDataFieldDefinitionsList(list):
     def __init_(self, data_fields_list, *args, **kwargs):
-        super(LabelDefinitionDataFieldsList, self).__init__(*args, **kwargs)
+        super(LabelDataFieldDefinitionsList, self).__init__(*args, **kwargs)
         for data_field_dict in data_fields_list:
-            data_field = LabelDefinitionDataField(data_field_dict)
+            data_field = LabelDataFieldDefinition(data_field_dict)
             self.append(data_field)
 
 
@@ -52,12 +51,15 @@ class LabelDefinition():
             self.categories = LabelCategoriesList(categories)
 
         data_fields = label_definition_dict.get('data_fields', [])
-        self.data_fields = LabelDefinitionDataFieldsList(data_fields)
+        self.data_fields = LabelDataFieldDefinitionsList(data_fields)
+
+    def __repr__(self):
+        return str(self.__dict__)
 
 
 class LabelDefinitionsList(list):
-    def update(self, data_list):
+    def update(self, labels_definitions_list):
         self.clear()
-        for label_definition_dict in data_list:
+        for label_definition_dict in labels_definitions_list:
             label_definition = LabelDefinition(label_definition_dict)
             self.append(label_definition)

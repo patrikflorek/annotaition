@@ -1,4 +1,4 @@
-# label.py
+# components/label.py
 
 
 class LabelsDict(dict):

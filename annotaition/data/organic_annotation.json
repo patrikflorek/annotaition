@@ -1,15 +1,13 @@
 {
     "title": "Organic objects",
     "description": "This annotation labels images with sets of corresponding probability maps.",
-    "remote_server": "http://localhost",
-    "index_feature_name": "Image",
-    "index_data_field_name": "Image file name",
     "feature_definitions": [
         {
             "name": "Image",
             "description": "Image with or without organic content.",
             "type": "image",
             "icon": "image",
+            "index_data_field_name": "Image file path",
             "data_fields": [
                 {
                     "name": "Image file path",
@@ -24,33 +22,13 @@
                     "name": "Creation time",
                     "type": "date_time",
                     "icon": "calendar-clock",
-                    "source": "image"
+                    "source": "feature"
                 },
                 {
                     "name": "Taken at location",
                     "type": "geolocation_coordinates",
                     "icon": "map-marker",
-                    "source": "image"
-                }
-            ]
-        },
-        {
-            "name": "Image data",
-            "description": "Data extracted from the image",
-            "type": "image_data",
-            "icon": "table",
-            "data_source": "feature",
-            "data_source_feature_name": "Image",
-            "data_fields": [
-                {
-                    "name": "Creation time",
-                    "type": "date_time",
-                    "icon": "calendar-clock"
-                },
-                {
-                    "name": "Taken at location",
-                    "type": "geolocation_coordinates",
-                    "icon": "map-marker"
+                    "source": "feature"
                 }
             ]
         }
@@ -90,8 +68,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1110670.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1110670.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -102,8 +86,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1179581.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1179581.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -114,8 +104,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1231023.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1231023.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -126,8 +122,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1268129.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1268129.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -138,8 +140,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1326999.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1326999.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -150,8 +158,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1343504.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1343504.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -162,8 +176,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1404819.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1404819.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
@@ -174,8 +194,14 @@
                 {
                     "name": "Organic object class",
                     "data_fields": [
-                        "pexels-photo-1480523.npz",
-                        "Organic"
+                        {
+                            "name": "Probability map",
+                            "value": "pexels-photo-1480523.npz"
+                        },
+                        {
+                            "name": "Object class",
+                            "value": "Organic"
+                        }
                     ]
                 }
             ]
