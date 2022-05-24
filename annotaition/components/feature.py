@@ -1,4 +1,4 @@
-# feature.py
+# components/feature.py
 
 import glob
 
