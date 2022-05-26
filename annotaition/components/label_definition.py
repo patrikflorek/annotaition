@@ -24,8 +24,9 @@ class LabelDataFieldDefinition():
         self.type = data_field_dict.get('type', None)
         self.icon = data_field_dict.get('icon', '')
 
-        if self.type == 'selection':
-            self.options = data_field_dict['options']
+        if self.type == 'category':
+            categories_list = data_field_dict.get('categories', [])
+            self.categories = LabelCategoriesList(categories_list)
 
     def __repr__(self):
         return str(self.__dict__)
@@ -45,10 +46,6 @@ class LabelDefinition():
         self.description = label_definition_dict.get('description', '')
         self.type = label_definition_dict.get('type', None)
         self.icon = label_definition_dict.get('icon', '')
-
-        if "categories" in label_definition_dict:
-            categories = label_definition_dict['categories']
-            self.categories = LabelCategoriesList(categories)
 
         data_fields = label_definition_dict.get('data_fields', [])
         self.data_fields = LabelDataFieldDefinitionsList(data_fields)

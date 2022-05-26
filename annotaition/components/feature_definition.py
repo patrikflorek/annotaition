@@ -12,7 +12,6 @@ class FeatureDefinitionsList(list):
             if feature_definition_dict['type'] == 'image':
                 feature_definition = ImageFeatureDefinition(
                     feature_definition_dict)
-                feature_definition.get_data_field_values()
             else:
                 feature_definition = BaseFeatureDefinition(
                     feature_definition_dict)
