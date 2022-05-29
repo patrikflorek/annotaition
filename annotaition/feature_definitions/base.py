@@ -40,3 +40,7 @@ class BaseFeatureDefinition:
     def get_data_field_values(self):
         raise NotImplementedError(
             f"method is not implemented in class {self.__class__.__name__}")
+
+    def get_indices(self):
+        raise NotImplementedError(
+            f"method is not implemented in class {self.__class__.__name__}")

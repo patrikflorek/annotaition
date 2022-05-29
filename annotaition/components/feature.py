@@ -1,57 +1,34 @@
 # components/feature.py
 
-import glob
-
-
-class Feature(dict):
-    def __init__(self, index, feature_definition, feature_data, *args, **kwargs):
-        super(Feature, self).__init__(*args, **kwargs)
-
-        for data_field_definition in feature_definition.data_fields:
-            data_field_name = data_field_definition.name
-            self[data_field_name] = feature_data[data_field_name][index]
-
-
-class ExampleFeatures(list):
-    def __init__(self, example_index, feature_definitions, features_data_table, *args, **kwargs):
-        super(ExampleFeatures, self).__init__(*args, **kwargs)
-        for feature_definition in feature_definitions:
-            feature_name = feature_definition.name
-            feature_data = features_data_table[feature_name]
-            feature = Feature(example_index, feature_definition, feature_data)
-            self.append(feature)
-
 
 class FeaturesDict(dict):
     def __init__(self, feature_definitions, *args, **kwargs):
         super(FeaturesDict, self).__init__(*args, **kwargs)
         self.feature_definitions = feature_definitions
+        self.data_field_values = feature_definitions.get_data_field_values()
 
-        for index in self.indices:
-            self.update({index: self._get_feature_values(index)})
-
-    def __getitem__(self, index):
-        return ExampleFeatures(index, self.feature_definitions,  self.features_data_table)
-
-    def _get_indices(self):
-        indices = []
-        for feature_definition in self.feature_definitions:
-            feature_only_indices = []
-            for index in feature_definition.indices:
-                if index not in indices:
-                    feature_only_indices.append(index)
-            indices.extend(feature_only_indices)
-
-        return indices
-
-    def _get_feature_values(index):
-        for feature_definition in
-
-    def _get_features_data_table(self):
-        data_table = dict.fromkeys(self.feature_definitions.names)
+    def _get_blank_features(self):
+        features_dict = {}
         for feature_definition in self.feature_definitions:
             feature_name = feature_definition.name
-            data_table[feature_name] = self._get_indexed_data_fields(
-                feature_definition)
+            
+            data_fields_dict = {}
+            features_dict[feature_name] = data_fields_dict
+            
+            for data_field in feature_definition.data_fields:
+                data_fields_dict[data_field.name] = None
 
-        return data_table
+        return features_dict
+
+    def __getitem__(self, index):
+        if index not in self.data_field_values:
+            return self._get_blank_features()
+        
+        return self.data_field_values[index]
+
+    def get_indices(self):
+        return self.feature_definitions.get_indices()
+
+    def update_feature_definitions(self, feature_definitions):
+        self.feature_definitions = feature_definitions
+        self.data_field_values = feature_definitions.get_data_field_values()

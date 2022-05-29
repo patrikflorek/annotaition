@@ -18,5 +18,12 @@ def get_annotation():
 
 
 if __name__ == "__main__":
+    print("Annotation:\n-----------")
     annotation = get_annotation()
-    print(annotation)
+    indices = annotation.get_indices()
+    for i, index in enumerate(indices):
+        print(f"{i}. index:")
+        print(indices[i])
+        print(f"{i}. example:")
+        example = annotation.get_example(indices[i])
+        print(example)

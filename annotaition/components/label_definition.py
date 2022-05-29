@@ -33,7 +33,7 @@ class LabelDataFieldDefinition():
 
 
 class LabelDataFieldDefinitionsList(list):
-    def __init_(self, data_fields_list, *args, **kwargs):
+    def __init__(self, data_fields_list, *args, **kwargs):
         super(LabelDataFieldDefinitionsList, self).__init__(*args, **kwargs)
         for data_field_dict in data_fields_list:
             data_field = LabelDataFieldDefinition(data_field_dict)
@@ -55,8 +55,8 @@ class LabelDefinition():
 
 
 class LabelDefinitionsList(list):
-    def update(self, labels_definitions_list):
+    def update_label_definitions(self, labels_definitions_data):
         self.clear()
-        for label_definition_dict in labels_definitions_list:
+        for label_definition_dict in labels_definitions_data:
             label_definition = LabelDefinition(label_definition_dict)
             self.append(label_definition)

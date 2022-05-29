@@ -1,4 +1,4 @@
 # feature_definitions/__init__.py
 
-from .base import BaseFeatureDefinition
-from .image import ImageFeatureDefinition
+from annotaition.feature_definitions.base import BaseFeatureDefinition
+from annotaition.feature_definitions.image import ImageFeatureDefinition
